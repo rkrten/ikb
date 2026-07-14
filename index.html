@@ -1,26 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>The Iron Krten Bench</title>
-	</head>
-	<body>
-		<h1>The Iron Krten Bench</h1>
-		<p>
-		Welcome to the Iron Krten Bench repository.
-		Here you'll find the source code, KiCad schematics, and other documentation for the following books:
-		<ul>
-			<li><a href="vol1/index.html">Volume 1 &mdash; A Maker's Guide to Lab Equipment</a></li>
-			<li><a href="vol2/index.html">Volume 2 &mdash; A Maker's Guide to Light Emitting Projects</a></li>
-			<li><a href="vol3/index.html">Volume 3 &mdash; A Maker's Guide to I<sup>2</sup>C</a></li>
-		</ul>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Iron Krten Bench</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="wrap">
 
-		<p>
-		These books are available on Amazon.
+	<header class="masthead">
+		<p class="eyebrow">Czechsadecimal Press &middot; Companion Repository</p>
+		<h1>The Iron Krten Bench
+			<span class="sub">Source code, KiCad schematics, Gerbers, and errata for the book series</span>
+		</h1>
+	</header>
 
-		<h2>Updates</h2>
-		<p>
-		Check back often for updates.
+	<p>
+	Everything you need to build the projects from the books lives here:
+	complete source code, KiCad schematics and PCB layouts, and Gerber
+	zips ready to drop into your PCB manufacturer's upload form.
+	Pick your volume below.
+	</p>
 
-	</body>
+	<div class="volumes">
+
+		<div class="vol-card">
+			<div class="vol-head">VOLUME 1</div>
+			<div class="vol-body">
+				<h3><a href="vol1/index.html">A Maker's Guide to Lab&nbsp;Equipment</a></h3>
+				<p>Build a composable bench instrument, one module at a time.</p>
+				<ul>
+					<li>3-channel frequency generator</li>
+					<li>3-channel frequency counter</li>
+					<li>Arbitrary boolean function generator</li>
+					<li>3 &times; 3 rotary encoder panel</li>
+					<li>IC tester</li>
+				</ul>
+				<p class="vol-links">
+					<a href="vol1/index.html">Files</a>
+					<a href="vol1/index.html#errata">Errata</a>
+					<!-- TODO: replace # with the Amazon product URL -->
+					<a href="#">Amazon</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="vol-card">
+			<div class="vol-head">VOLUME 2</div>
+			<div class="vol-body">
+				<!--
+				<h3><a href="vol2/index.html">A Maker's Guide to Light Emitting&nbsp;Projects</a></h3>
+				-->
+				<h3>A Maker's Guide to Light Emitting&nbsp;Projects</h3>
+				<p>Projects with lights. Lots of lights.</p>
+				<ul>
+					<li>156-LED round clock</li>
+					<li>247-LED clock with moon phase</li>
+					<li>8 &times; 8 &ldquo;nixie tube style&rdquo; display</li>
+					<li>5-sided LED cubes</li>
+					<li>HEXBUS game</li>
+				</ul>
+				<p><i>Coming soon...</i></p>
+				<!--
+				<p class="vol-links">
+					<a href="vol2/index.html">Files</a>
+					<a href="vol2/index.html#errata">Errata</a>
+					<a href="#">Amazon</a>
+				</p>
+				-->
+			</div>
+		</div>
+
+		<div class="vol-card">
+			<div class="vol-head">VOLUME 3</div>
+			<div class="vol-body">
+				<!--
+				<h3><a href="vol3/index.html">A Maker's Guide to I<sup>2</sup>C</a></h3>
+				-->
+				<h3>A Maker's Guide to I<sup>2</sup>C</h3>
+				<p>How the bus works, and what to hang off of it.</p>
+				<ul>
+					<li>I<sup>2</sup>C fundamentals and the Pico API</li>
+					<li>84 native I<sup>2</sup>C busses on one Pico</li>
+					<li>18-sensor HTU-31D test board</li>
+					<li>Dual-redundant EEPROM data store</li>
+				</ul>
+				<p><i>Coming soon ...</i></p>
+				<!--
+				<p class="vol-links">
+					<a href="vol3/index.html">Files</a>
+					<a href="vol3/index.html#errata">Errata</a>
+					<a href="#">Amazon</a>
+				</p>
+				-->
+			</div>
+		</div>
+
+	</div>
+
+	<h2>Revision history</h2>
+	<table>
+		<tr><th>Date</th><th>Change</th></tr>
+		<tr><td class="file">2026-07-14</td><td>Site launched along with Volume 1.</td></tr>
+	</table>
+
+	<footer>
+		<p>This site, like the books, was written by a real live human.</p>
+		<p>&copy; 2026 Rob Krten &middot; <a href="https://krten.com">krten.com</a></p>
+	</footer>
+
+</div>
+</body>
 </html>

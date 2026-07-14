@@ -1,0 +1,258 @@
+/* ============================================================
+   The Iron Krten Bench — companion site
+   Design: typeset like the books. Maroon table headers, paper
+   background, data-book masthead. No JavaScript, no webfonts.
+   ============================================================ */
+
+:root {
+  --paper:   #FBF8F2;
+  --ink:     #211D18;
+  --maroon:  #9B1C1F;   /* sampled from the book's table headers */
+  --maroon-d:#7A1518;
+  --rule:    #D9D1C4;
+  --chip:    #F1EBE1;
+  --muted:   #6E6659;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 17px; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  line-height: 1.55;
+}
+
+/* thin maroon band across the very top, like the cover spine */
+body::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background: var(--maroon);
+}
+
+.wrap {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+/* ---------------- masthead: double rule, data-book style ---- */
+
+header.masthead {
+  padding: 2.2rem 0 1rem;
+  border-bottom: 3px solid var(--ink);
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+header.masthead::after {           /* thick–thin double rule */
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -7px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.eyebrow {
+  font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  margin: 0 0 0.4rem;
+}
+
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 0;
+}
+h1 .sub {
+  display: block;
+  font-weight: 400;
+  font-size: 0.55em;
+  color: var(--muted);
+  margin-top: 0.35rem;
+  letter-spacing: 0;
+}
+
+.crumb {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  margin: 0 0 1rem;
+}
+.crumb a { text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+/* ---------------- general text ------------------------------ */
+
+a { color: var(--maroon); }
+a:hover { color: var(--maroon-d); }
+a:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 2px;
+}
+
+h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  margin: 2.6rem 0 0.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+/* mono chapter tag, e.g. CH 4 / APP A, mirrors the book numbering */
+.tag {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--maroon);
+  padding: 0.18rem 0.45rem;
+  white-space: nowrap;
+  position: relative;
+  top: -0.1em;
+}
+
+p { margin: 0.6rem 0 1rem; }
+
+code, .mono {
+  font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--chip);
+  padding: 0.08em 0.3em;
+}
+
+/* ---------------- volume cards (landing page) --------------- */
+
+.volumes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.8rem 0 0;
+}
+
+.vol-card {
+  border: 1px solid var(--ink);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.vol-card .vol-head {
+  background: var(--maroon);
+  color: #fff;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  padding: 0.4rem 0.9rem;
+}
+.vol-card .vol-body {
+  padding: 0.9rem 0.9rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.vol-card h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+.vol-card h3 a { text-decoration: none; color: var(--ink); }
+.vol-card h3 a:hover { color: var(--maroon); text-decoration: underline; }
+.vol-card p { font-size: 0.92rem; margin: 0 0 0.8rem; }
+.vol-card ul {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.vol-card li { margin: 0.15rem 0; }
+.vol-links {
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+.vol-links a { margin-right: 0.9rem; white-space: nowrap; }
+
+/* ---------------- tables: same dress as the book ------------ */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.8rem 0 1.6rem;
+  font-size: 0.92rem;
+  background: #fff;
+}
+caption {
+  caption-side: top;
+  text-align: left;
+  font-style: italic;
+  color: var(--muted);
+  padding-bottom: 0.35rem;
+  font-size: 0.88rem;
+}
+th {
+  background: var(--maroon);
+  color: #fff;
+  text-align: left;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.7rem;
+}
+td {
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.7rem;
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td { background: #F7F2EA; }
+td.file {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  width: 1%;            /* shrink to content; description gets the rest */
+}
+
+/* ---------------- project sections (volume pages) ----------- */
+
+section.project { margin-bottom: 0.5rem; }
+section.project > p:first-of-type { max-width: 46rem; }
+
+.note {
+  border-left: 4px solid var(--maroon);
+  background: var(--chip);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.92rem;
+  margin: 1rem 0 1.4rem;
+}
+
+/* ---------------- footer: colophon echo --------------------- */
+
+footer {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+footer p { margin: 0.3rem 0; }
+
+/* ---------------- small screens ------------------------------ */
+
+@media (max-width: 40rem) {
+  html { font-size: 16px; }
+  td.file { white-space: normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

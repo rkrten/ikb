@@ -1,21 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>The Iron Krten Bench &mdash; Volume 3: A Maker's Guide to I<sup>2</sup>C</title>
-	</head>
-	<body>
-		<h1>The Iron Krten Bench &mdash; Volume 3: A Maker's Guide to I<sup>2</sup>C</h1>
-		<p>
-		This volume explores the world of I<sup>2</sup>C:
-		<ul>
-			<li>how the bus works,
-			<li>using the C API functions,
-			<li>Expanding to 84 busses on a single Pico
-			<li>Using EEPROM devices to build a solid, dual redundant data store
-		</ul>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Iron Krten Bench &mdash; Volume 3: A Maker's Guide to I&#178;C</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="wrap">
 
-		<p>
-		The projects are based on the Raspberry Pico processor.
-	</body>
+	<header class="masthead">
+		<p class="crumb"><a href="../index.html">&larr; The Iron Krten Bench</a></p>
+		<p class="eyebrow">Volume 3</p>
+		<h1>A Maker's Guide to I<sup>2</sup>C
+			<span class="sub">How the bus works, and what to hang off of it.</span>
+		</h1>
+	</header>
+
+	<p>
+	I<sup>2</sup>C fundamentals, the Pico API, 84 native busses on a
+	single Pico, and a dual-redundant EEPROM data store. Companion files
+	will appear here when Volume&nbsp;3 ships.
+	</p>
+
+	<div class="note">
+	Volume&nbsp;3 is in production. The chapter list below is subject to
+	change until release.
+	</div>
+
+	<!-- Chapter numbers assume: Introduction = 1, Overview = 2.
+	     VERIFY against the final TOC before populating downloads. -->
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;3</span> I<sup>2</sup>C Fundamentals</h2>
+		<p>Topology, addressing, command patterns, and how to read the
+		data sheets.</p>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;4</span> I<sup>2</sup>C Software on a Pico</h2>
+		<p>The SDK functions, the <code>nostop</code> parameter, and
+		device enumeration.</p>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;5</span> 84 I<sup>2</sup>C Busses</h2>
+		<p>Crosspoint busses from pin-pair combinations &mdash; no bus
+		expanders required. Includes the 18-sensor HTU-31D test board.</p>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;6</span> EEPROM Devices</h2>
+		<p>The 24C256 family, pageification, and a dual-redundant
+		CRC-protected database.</p>
+	</section>
+
+	<h2 id="errata">Errata</h2>
+	<p>No errata reported yet.
+	If you find one, please report it via <a href="https://krten.com">krten.com</a>.</p>
+
+	<footer>
+		<p>This site, like the books, was written by a real live human.</p>
+		<p>&copy; 2026 Rob Krten &middot; <a href="../index.html">The Iron Krten Bench</a></p>
+	</footer>
+
+</div>
+</body>
 </html>

@@ -1,24 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>The Iron Krten Bench &mdash; Volume 1: A Maker's Guide to Lab Equipment</title>
-	</head>
-	<body>
-		<h1>The Iron Krten Bench &mdash; Volume 1: A Maker's Guide to Lab Equipment</h1>
-		<p>
-		This volume explores building projects for your electronics lab:
-		<ul>
-			<li>3 channel frequency generator
-			<li>3 channel frequency counter
-			<li>Arbitrary function generation
-			<li>Rotary encoder panel
-			<li>DIP adaptor sockets
-			<li>IC tester
-		</ul>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Iron Krten Bench &mdash; Volume 1: A Maker's Guide to Lab Equipment</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="wrap">
 
-		<p>
-		The projects are based on the Raspberry Pico processor.
-	</body>
+	<header class="masthead">
+		<p class="crumb"><a href="../index.html">&larr; The Iron Krten Bench</a></p>
+		<p class="eyebrow">Volume 1</p>
+		<h1>A Maker's Guide to Lab Equipment
+			<span class="sub">Build a composable bench instrument: generate, measure, combine, and test.</span>
+		</h1>
+	</header>
+
+	<p>
+	Each chapter below links to its companion files. Gerber zips are ready
+	to upload to <a href="https://jlcpcb.com">JLCPCB</a> as-is; KiCad zips contain
+	the full schematic and PCB project; source zips contain the C code,
+	Makefiles, and anything else the chapter walks through.
+	</p>
+
+	<!-- ================================================================
+	     File naming convention (one directory per chapter):
+	       vol1/dl/<ch>-<slug>/<slug>-gerbers.zip     ready for fab upload
+	       vol1/dl/<ch>-<slug>/<slug>-kicad.zip       KiCad project
+	       vol1/dl/<ch>-<slug>/<slug>-schematic.pdf   printable schematic
+	       vol1/dl/<ch>-<slug>/<slug>-src.zip         source code
+	       vol1/dl/<ch>-<slug>/<slug>.uf2             prebuilt firmware
+	     Chapter numbers below assume the new numbering (Introduction = 1,
+	     Overview = 2, first project = 3). VERIFY against the final TOC.
+	     ================================================================ -->
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;3</span> The Motherboard</h2>
+		<p>The carrier board that ties the modules together: power, level
+		shifting, and the peripheral processor interface.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/03-motherboard/motherboard-gerbers.zip">motherboard-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/03-motherboard/motherboard-kicad.zip">motherboard-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/03-motherboard/motherboard-schematic.pdf">motherboard-schematic.pdf</a></td><td>Schematic, printable</td></tr>
+			<tr><td class="file"><a href="dl/03-motherboard/motherboard-src.zip">motherboard-src.zip</a></td><td>Source code</td></tr>
+		</table>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;4</span> The Frequency Generator</h2>
+		<p>Three channels of square waves, practically DC to 62.5&nbsp;MHz,
+		with PIO doing the heavy lifting.</p>
+		<p>Source code is part of the motherboard, above.</p>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;5</span> The Frequency Counter</h2>
+		<p>Three channels of measurement to close the loop on the generator.</p>
+		<p>Source code is part of the motherboard, above.</p>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;6</span> Rotary Encoders</h2>
+		<p>The 3&nbsp;&times;&nbsp;3 encoder matrix &mdash; one knob per generator &mdash; with debounce and decode logic.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/06-encoders/encoders-gerbers.zip">encoders-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/06-encoders/encoders-kicad.zip">encoders-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/06-encoders/encoders-schematic.pdf">encoders-schematic.pdf</a></td><td>Schematic, printable</td></tr>
+		</table>
+
+		<p>Source code is part of the motherboard, above.</p>
+
+		<p>As an added bonus, you can build a &ldquo;shield&rdquo; that presents a nice clean front panel if you're populating the full 3&nbsp;&times;&nbsp;3 encoder matrix.
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/06-encoders/shield-gerbers.zip">shield-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/06-encoders/shield-kicad.zip">shield-kicad.zip</a></td><td>KiCad project</td></tr>
+		</table>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;7</span> Arbitrary Function Generator</h2>
+		<p>Three independent boolean functions of three inputs, with an
+		RPN expression interface.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/07-afg/afg-gerbers.zip">afg-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/07-afg/afg-kicad.zip">afg-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/07-afg/afg-schematic.pdf">afg-schematic.pdf</a></d><td>Schematic, printable</td></tr>
+		</table>
+
+		<p>Source code is part of the motherboard, above.</p>
+
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;8</span> Display for the AFG</h2>
+		<p>The visual truth table.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/08-afg-display/afg-display-gerbers.zip">afg-display-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/08-afg-display/afg-display-kicad.zip">afg-display-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/08-afg-display/afg-display-schematic.pdf">afg-display-schematic.pdf</a></d><td>Schematic, printable</td></tr>
+		</table>
+
+		<p>Source code is part of the motherboard, above.</p>
+
+		<p>As an added bonus, you can build a &ldquo;shield&rdquo; that has a legend for the lights.
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/08-afg-display/shield-gerbers.zip">shield-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/08-afg-display/shield-kicad.zip">shield-kicad.zip</a></td><td>KiCad project</td></tr>
+		</table>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">CH&nbsp;9</span> The IC Tester</h2>
+		<p>Dual-Pico tester for 74-series, 4000-series, EPROMs, and more,
+		with a ZIF-40 socket and a C++ DSL for chip definitions.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/09-ictester/ictester-gerbers.zip">ictester-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/09-ictester/ictester-kicad.zip">ictester-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/09-ictester/ictester-schematic.pdf">ictester-schematic.pdf</a></d><td>Schematic, printable</td></tr>
+			<tr><td class="file"><a href="dl/09-ictester/ictester-src.zip">ictester-src.zip</a></td><td>Source code and chip definitions</td></tr>
+		</table>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">APP&nbsp;A</span> Adaptors of all Kinds</h2>
+		<p>RJ-45 to breadboard adaptor.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/rj45-breadboard-gerbers.zip">rj45-breadboard-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/rj45-breadboard-kicad.zip">rj45-breadboard-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/rj45-breadboard-schematic.pdf">rj45-breadboard-schematic.pdf</a></d><td>Schematic, printable</td></tr>
+		</table>
+
+		<p>RJ-45 to RK-45 and USB adaptor.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/rj45-rj45-usb-gerbers.zip">rj45-rj45-usb-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/rj45-rj45-usb-kicad.zip">rj45-rj45-usb-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/rj45-rj45-usb-schematic.pdf">rj45-rj45-usb-schematic.pdf</a></d><td>Schematic, printable</td></tr>
+		</table>
+
+		<p>DIP adaptor sockets and friends.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/adaptors-gerbers.zip">adaptors-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/adaptors-kicad.zip">adaptors-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/appa-adaptors/adaptors-schematic.pdf">adaptors-schematic.pdf</a></d><td>Schematic, printable</td></tr>
+		</table>
+	</section>
+
+	<section class="project">
+		<h2><span class="tag">APP&nbsp;B</span> COBS Encoding / Decoding</h2>
+		<p>The inter-processor serial framing library.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/appb-cobs/cobs-src.zip">cobs-src.zip</a></td><td>Library source</td></tr>
+		</table>
+	</section>
+
+	<h2 id="errata">Errata</h2>
+	<p>The following functionality is not yet implemented in the source code:</p>
+	<ul>
+		<li>Musical and DTMF scales in the frequency generator</li>
+		<li>Connection between IC tester and motherboard</li>
+	</ul>
+
+	<p>If you find additional errata, please report via <a href="https://krten.com">krten.com</a>.</p>
+
+	<footer>
+		<p>This site, like the books, was written by a real live human.</p>
+		<p>&copy; 2026 Rob Krten &middot; <a href="../index.html">The Iron Krten Bench</a></p>
+	</footer>
+
+</div>
+</body>
 </html>
-
