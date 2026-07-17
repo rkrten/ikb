@@ -19,61 +19,113 @@
 	</header>
 
 	<p>
-	Clocks, displays, cubes, games, and the libraries that hold them
-	together. Companion files will appear here when Volume&nbsp;2 ships.
+	Each chapter below links to its companion files. Gerber zips are ready
+	to upload to <a href="https://jlcpcb.com">JLCPCB</a> as-is; KiCad zips contain
+	the full schematic and PCB project; source zips contain the C code,
+	Makefiles, and anything else the chapter walks through.
 	</p>
 
-	<div class="note">
-	Volume&nbsp;2 is in production. The chapter list below is subject to
-	change until release.
-	</div>
-
-	<!-- Chapter numbers assume: Introduction = 1, Overview = 2.
-	     VERIFY against the final TOC before populating downloads. -->
+	<!-- ================================================================
+	     File naming convention (one directory per chapter):
+	       vol1/dl/<ch>-<slug>/<slug>-gerbers.zip     ready for fab upload
+	       vol1/dl/<ch>-<slug>/<slug>-kicad.zip       KiCad project
+	       vol1/dl/<ch>-<slug>/<slug>-schematic.pdf   printable schematic
+	       vol1/dl/<ch>-<slug>/<slug>-src.zip         source code
+	     ================================================================ -->
 
 	<section class="project">
 		<h2><span class="tag">CH&nbsp;3</span> Dial Clocks</h2>
-		<p>The 156-LED round clock, and the 247-LED version with a moon
-		phase complication.</p>
+		<p>The 247-LED version with a moon phase complication.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/03-dialclocks/dialclocks-gerbers.zip">dialclocks-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/03-dialclocks/dialclocks-kicad.zip">dialclocks-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/03-dialclocks/dialclocks-schematic.pdf">dialclocks-schematic.pdf</a></td><td>Schematic, printable</td></tr>
+			<tr><td class="file"><a href="dl/03-dialclocks/dialclocks-src.zip">dialclocks-src.zip</a></td><td>Source code</td></tr>
+		</table>
 	</section>
 
 	<section class="project">
 		<h2><span class="tag">CH&nbsp;4</span> The Cube</h2>
-		<p>8&nbsp;&times;&nbsp;8 and 16&nbsp;&times;&nbsp;16 five-sided
-		LED cubes.</p>
+		<p>8&nbsp;&times;&nbsp;8 and 16&nbsp;&times;&nbsp;16 five-sided LED cubes.</p>
+
+		<p>Note that only the software is supplied; the cubes run off of a Pico on a prototype breadboard, and as such don't have a PCB associated with them.
+
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/04-cubes-8x8/cubes-8x8-src.zip">cubes-8x8-src.zip</a></td><td>Source code (8x8 cube)</td></tr>
+			<tr><td class="file"><a href="dl/04-cubes-16x16/cubes-16x16-src.zip">cubes-16x16-src.zip</a></td><td>Source code (16x16 cube)</td></tr>
+		</table>
 	</section>
 
 	<section class="project">
 		<h2><span class="tag">CH&nbsp;5</span> The Dot Matrix Display</h2>
 		<p>The 8&nbsp;&times;&nbsp;8 &ldquo;nixie tube style&rdquo; display.</p>
+
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/05-dotmatrix/dotmatrix-gerbers.zip">dotmatrix-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/05-dotmatrix/dotmatrix-positions.csv">dotmatrix-positions.csv</a></td><td>PCBA position file</td></tr>
+			<tr><td class="file"><a href="dl/05-dotmatrix/dotmatrix-bom.csv">dotmatrix-bom.csv</a></td><td>PCBA BOM file</td></tr>
+			<tr><td class="file"><a href="dl/05-dotmatrix/dotmatrix-kicad.zip">dotmatrix-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/05-dotmatrix/dotmatrix-schematic.pdf">dotmatrix-schematic.pdf</a></td><td>Schematic, printable</td></tr>
+			<!-- coming soon
+			<tr><td class="file"><a href="dl/05-dotmatrix/dotmatrix-src.zip">dotmatrix-src.zip</a></td><td>Source code</td></tr>
+			-->
+		</table>
 	</section>
 
 	<section class="project">
-		<h2><span class="tag">CH&nbsp;6</span> HEXBUS Game</h2>
+		<h2><span class="tag">CH&nbsp;7</span> HEXBUS Game</h2>
 		<p>A hexagonal-grid logic puzzle on LED hardware.</p>
-	</section>
 
-	<section class="project">
-		<h2><span class="tag">CH&nbsp;7</span> Instrumentation Panel</h2>
-		<p>Putting the lights to work.</p>
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/07-hexbus/hexbus-gerbers.zip">hexbus-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/07-hexbus/hexbus-kicad.zip">hexbus-kicad.zip</a></td><td>KiCad project</td></tr>
+			<tr><td class="file"><a href="dl/07-hexbus/hexbus-schematic.pdf">hexbus-schematic.pdf</a></td><td>Schematic, printable</td></tr>
+			<!-- coming soon
+			<tr><td class="file"><a href="dl/07-hexbus/hexbus-src.zip">hexbus-src.zip</a></td><td>Source code</td></tr>
+			-->
+		</table>
+
+		<p>As an added bonus, you can build a &ldquo;shield&rdquo; that presents a nice clean front panel.
+		<table>
+			<tr><th>File</th><th>Description</th></tr>
+			<tr><td class="file"><a href="dl/07-hexbus/shield-gerbers.zip">shield-gerbers.zip</a></td><td>PCB fabrication files</td></tr>
+			<tr><td class="file"><a href="dl/07-hexbus/shield-kicad.zip">shield-kicad.zip</a></td><td>KiCad project</td></tr>
+		</table>
 	</section>
 
 	<section class="project">
 		<h2><span class="tag">CH&nbsp;8</span> KiCad Move (km)</h2>
 		<p>A utility for wrangling PCB layouts.</p>
+
+		<p>This is a host-side software utility</p>
+		<table>
+			<!-- coming soon
+			<tr><td class="file"><a href="dl/07-hexbus/hexbus-src.zip">hexbus-src.zip</a></td><td>Source code</td></tr>
+			-->
+		</table>
+
 	</section>
 
 	<section class="project">
 		<h2><span class="tag">CH&nbsp;9</span> GPS Library</h2>
-		<p>Time synchronization for the clocks.</p>
-	</section>
-
-	<section class="project">
-		<h2><span class="tag">APP&nbsp;A</span> The WS2812 LED</h2>
-		<p>The addressable LED that powers most of this volume.</p>
+		<p>Time synchronization from GPS.</p>
+		<table>
+			<tr><td class="file"><a href="dl/09-gps/gps-src.zip">gps-src.zip</a></td><td>Source code</td></tr>
+		</table>
 	</section>
 
 	<h2 id="errata">Errata</h2>
+	<p>The following files are being finalized and are not yet available:</p>
+	<ul>
+		<li>Dot matrix display source code</li>
+		<li>Hexbus game source code</li>
+		<li>KiCad move utility source code</li>
+	</ul>
+
 	<p>No errata reported yet.
 	If you find one, please report it via <a href="https://krten.com">krten.com</a>.</p>
 
